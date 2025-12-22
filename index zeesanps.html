@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zeesnaps | Photography & Videography</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+/* ===== BODY ===== */
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top right,#ff7a18 0%,#020405 45%),
+    linear-gradient(180deg,#020405 0%,#000 100%);
+  color:#fff;
+}
+
+/* ===== NAV ===== */
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 6%;
+}
+
+.logo{font-weight:700;letter-spacing:2px}
+
+.menu-btn{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none;
+}
+
+.nav a{
+  color:#fff;
+  text-decoration:none;
+  opacity:.85;
+}
+.nav a:hover{opacity:1}
+
+/* ===== HERO ===== */
+.hero-wrap{
+  margin:30px 6%;
+  padding:40px;
+  border-radius:26px;
+  background:linear-gradient(
+    135deg,
+    rgba(255,122,24,0.18),
+    rgba(0,0,0,0.6)
+  );
+  backdrop-filter:blur(14px);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.hero-text .tag{
+  color:#ffb347;
+  font-size:13px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.hero-text h1{
+  font-size:3.2rem;
+  line-height:1.15;
+  margin:18px 0;
+}
+
+.hero-text p{
+  opacity:.85;
+  margin-bottom:26px;
+}
+
+.btn{
+  padding:14px 34px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#ffb347,#ff7a18);
+  color:#000;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  transition:.4s;
+}
+.btn:hover{
+  background:linear-gradient(135deg,#ff8c2a,#ff5e00);
+  box-shadow:0 0 25px rgba(255,122,24,.6);
+}
+
+/* HERO IMAGE */
+.hero-image img{
+  width:100%;
+  max-width:340px;
+  height:420px;
+  object-fit:cover;
+  border-radius:22px;
+}
+
+/* ===== SECTIONS ===== */
+section{padding:90px 6%}
+
+.title{
+  text-align:center;
+  font-size:2.3rem;
+  margin-bottom:60px;
+}
+
+/* ===== REELS (ONLY 2) ===== */
+.reels-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  justify-content:center;
+}
+
+.reel{
+  border-radius:22px;
+  overflow:hidden;
+  background:#000;
+  transition:.4s;
+}
+
+.reel:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 35px rgba(255,122,24,.45);
+}
+
+.reel video{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+/* ===== PHOTOS ===== */
+.photos-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+
+.photo-card{
+  padding:20px;
+  border-radius:22px;
+  background:rgba(255,255,255,.07);
+  transition:.4s;
+}
+
+.photo-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(255,122,24,.45);
+}
+
+.photo-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:16px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  padding:40px 6%;
+  text-align:center;
+  background:rgba(0,0,0,.6);
+}
+
+footer a{
+  color:#ffb347;
+  text-decoration:none;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
+  .menu-btn{display:block}
+
+  .nav ul{
+    position:absolute;
+    top:70px;
+    right:6%;
+    background:#111;
+    flex-direction:column;
+    padding:18px 26px;
+    border-radius:18px;
+    display:none;
+  }
+
+  .nav ul.active{display:flex}
+
+  .hero-wrap{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:28px 22px;
+  }
+
+  .hero-text h1{font-size:2.2rem}
+
+  .hero-image img{height:360px}
+
+  .title{font-size:1.9rem}
+
+  .reel video{height:360px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <h2 class="logo">ZEESNAPS</h2>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <ul id="menu">
+    <li><a href="#">Home</a></li>
+    <li><a href="#reels">Reels</a></li>
+    <li><a href="#photos">Photos</a></li>
+    <li><a href="https://instagram.com/_.zee.snaps" target="_blank">Instagram</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="hero-text">
+    <span class="tag">Photography & Videography</span>
+    <h1>Cinematic Visual Storytelling</h1>
+    <p>We create powerful photography and videography that captures emotion and story.</p>
+    <a href="https://instagram.com/_.zee.snaps" target="_blank" class="btn">Let’s Connect</a>
+  </div>
+
+  <div class="hero-image">
+    <img src="IMG_5178.JPG" alt="Zeesnaps">
+  </div>
+</div>
+
+<!-- REELS -->
+<section id="reels">
+  <h2 class="title">Reels</h2>
+  <div class="reels-grid">
+    <div class="reel">
+      <video src="IMG_5327.MOV" autoplay muted loop playsinline></video>
+    </div>
+    <div class="reel">
+      <video src="IMG_4331.MOV" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTOS -->
+<section id="photos">
+  <h2 class="title">Photos</h2>
+  <div class="photos-grid">
+    <div class="photo-card"><img src="IMG_3576.JPG"></div>
+    <div class="photo-card"><img src="IMG_3606.JPG"></div>
+    <div class="photo-card"><img src="IMG_5294.JPG"></div>
+    <div class="photo-card"><img src="IMG_4990.JPG"></div>
+    <div class="photo-card"><img src="IMG_5313.JPG"></div>
+    <div class="photo-card"><img src="IMG_5315.JPG"></div>
+  </div>
+</section>
+
+<footer>
+  <p>Follow us on <a href="https://instagram.com/_.zee.snaps" target="_blank">Instagram</a></p>
+  <p>© 2025 Zeesnaps</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
